@@ -100,6 +100,7 @@ class VistaServicios(VistaBase):
                                   padx=12, pady=10, highlightthickness=1,
                                   highlightbackground=PALETA["borde"])
         self.resultado.pack(fill="both", expand=True)
+        self.resultado.bind("<Configure>", lambda e: self.resultado.config(wraplength=max(e.width - 24, 100)))
 
     def _construir_tabla(self):
         panel = Panel(self, "Catálogo de servicios")

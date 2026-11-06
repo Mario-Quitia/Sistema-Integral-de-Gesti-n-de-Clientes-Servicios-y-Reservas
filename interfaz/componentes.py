@@ -42,8 +42,8 @@ FUENTES = {
     "normal": (FUENTE, 10),
     "negrita": (FUENTE, 10, "bold"),
     "pequena": (FUENTE, 9),
-    "dato": (FUENTE, 24, "bold"),
-    "marca": (FUENTE, 17, "bold"),
+    "dato": (FUENTE, 20, "bold"),
+    "marca": (FUENTE, 14, "bold"),
 }
 
 
@@ -93,7 +93,7 @@ def configurar_estilos(raiz):
                    foreground=[("disabled", "#f8fafc")])
 
     # Tablas
-    estilo.configure("Treeview", rowheight=30, background=p["superficie"], fieldbackground=p["superficie"],
+    estilo.configure("Treeview", rowheight=27, background=p["superficie"], fieldbackground=p["superficie"],
                      bordercolor=p["borde"], borderwidth=0, font=FUENTES["normal"])
     estilo.configure("Treeview.Heading", font=FUENTES["negrita"], background="#e2e8f0",
                      foreground=p["texto"], relief="flat", padding=6)
@@ -125,12 +125,12 @@ class Panel(tk.Frame):
                          highlightbackground=PALETA["borde"], **kwargs)
         if titulo:
             cabecera = ttk.Frame(self, style="Superficie.TFrame")
-            cabecera.pack(fill="x", padx=16, pady=(14, 4))
+            cabecera.pack(fill="x", padx=16, pady=(12, 2))
             ttk.Label(cabecera, text=titulo, style="Seccion.TLabel").pack(anchor="w")
             if subtitulo:
                 ttk.Label(cabecera, text=subtitulo, style="Suave.TLabel").pack(anchor="w")
         self.cuerpo = ttk.Frame(self, style="Superficie.TFrame")
-        self.cuerpo.pack(fill="both", expand=True, padx=16, pady=(4, 14))
+        self.cuerpo.pack(fill="both", expand=True, padx=16, pady=(4, 12))
 
 
 class Tarjeta(tk.Frame):
@@ -141,7 +141,7 @@ class Tarjeta(tk.Frame):
                          highlightbackground=PALETA["borde"])
         tk.Frame(self, bg=color, width=5).pack(side="left", fill="y")
         cuerpo = tk.Frame(self, bg=PALETA["superficie"])
-        cuerpo.pack(side="left", fill="both", expand=True, padx=14, pady=12)
+        cuerpo.pack(side="left", fill="both", expand=True, padx=14, pady=8)
         fila = tk.Frame(cuerpo, bg=PALETA["superficie"])
         fila.pack(fill="x")
         tk.Label(fila, text=titulo.upper(), bg=PALETA["superficie"], fg=PALETA["texto_suave"],
@@ -243,10 +243,15 @@ class Formulario(ttk.Frame):
         super().__init__(padre, style="Superficie.TFrame")
         self.variables = {}
         self.controles = {}
-        for i, (clave, etiqueta, tipo, opciones) in enumerate(campos):
-            fila, col = divmod(i, columnas)
+        fila = col = 0
+        for clave, etiqueta, tipo, opciones in campos:
+            span = min(opciones.get("span", 1), columnas)   # "span" = columnas que ocupa
+            if col + span > columnas:
+                fila, col = fila + 1, 0
             caja = ttk.Frame(self, style="Superficie.TFrame")
-            caja.grid(row=fila, column=col, sticky="ew", padx=(0 if col == 0 else 12, 0), pady=4)
+            caja.grid(row=fila, column=col, columnspan=span, sticky="ew",
+                      padx=(0 if col == 0 else 12, 0), pady=3)
+            col += span
             ttk.Label(caja, text=etiqueta, style="Superficie.TLabel",
                       font=FUENTES["negrita"]).pack(anchor="w")
             variable = tk.StringVar(value=opciones.get("valor", ""))

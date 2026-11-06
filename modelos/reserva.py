@@ -138,8 +138,8 @@ class Reserva(Entidad):
             "identificacion": self._cliente.identificacion,
             "servicio": self._servicio.nombre,
             "tipo": self._servicio.tipo,
-            "duracion": f"{self._duracion:g} {self._servicio.unidad}",
             **self._costos,
+            "duracion": f"{self._duracion:g} {self._servicio.unidad}",
             "estado": self._estado,
             "fecha": self.fecha_creacion.strftime("%Y-%m-%d %H:%M"),
         }

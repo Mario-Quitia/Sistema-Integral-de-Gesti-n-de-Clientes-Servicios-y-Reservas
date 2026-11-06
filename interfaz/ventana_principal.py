@@ -69,7 +69,6 @@ class VentanaPrincipal(tk.Tk):
         self.seccion_actual = None
         self._construir_lateral()
         self._construir_contenido()
-        self._construir_barra_estado()
         self.mostrar("dashboard")
         self._reloj()
         registrar_evento("Interfaz gráfica iniciada")
@@ -83,12 +82,12 @@ class VentanaPrincipal(tk.Tk):
 
     # ---------- estructura ----------
     def _construir_lateral(self):
-        lateral = tk.Frame(self, bg=PALETA["lateral"], width=230)
+        lateral = tk.Frame(self, bg=PALETA["lateral"], width=240)
         lateral.pack(side="left", fill="y")
         lateral.pack_propagate(False)
 
         marca = tk.Frame(lateral, bg=PALETA["lateral"])
-        marca.pack(fill="x", padx=20, pady=(24, 28))
+        marca.pack(fill="x", padx=18, pady=(22, 24))
         tk.Label(marca, text="FJ", bg=PALETA["primario"], fg="#ffffff", font=(FUENTE, 14, "bold"),
                  width=3, pady=4).pack(side="left")
         textos = tk.Frame(marca, bg=PALETA["lateral"])
@@ -135,6 +134,10 @@ class VentanaPrincipal(tk.Tk):
                                   font=FUENTES["normal"], justify="right")
         self.lbl_reloj.pack(side="right", padx=28)
 
+        self.barra_estado = tk.Label(derecha, anchor="w", padx=16, pady=5, font=FUENTES["pequena"],
+                                     bg="#e2e8f0", fg=PALETA["texto_suave"], text="Listo")
+        self.barra_estado.pack(side="bottom", fill="x")
+
         contenedor = ttk.Frame(derecha)
         contenedor.pack(fill="both", expand=True, padx=28, pady=20)
         contenedor.rowconfigure(0, weight=1)
@@ -143,18 +146,6 @@ class VentanaPrincipal(tk.Tk):
             vista = clase(contenedor, self)
             vista.grid(row=0, column=0, sticky="nsew")
             self.vistas[clave] = vista
-
-    def _construir_barra_estado(self):
-        self.barra_estado = tk.Label(self, anchor="w", padx=12, pady=4, font=FUENTES["pequena"],
-                                     bg="#e2e8f0", fg=PALETA["texto_suave"], text="Listo")
-        # Se coloca dentro del área derecha, al fondo
-        self.barra_estado.place(relx=1.0, rely=1.0, anchor="se", relwidth=1.0, x=0)
-        self.barra_estado.lower()   # que no tape el menú lateral
-        self.barra_estado.place_forget()
-        derecha = self.vistas["dashboard"].master.master
-        self.barra_estado = tk.Label(derecha, anchor="w", padx=16, pady=5, font=FUENTES["pequena"],
-                                     bg="#e2e8f0", fg=PALETA["texto_suave"], text="Listo")
-        self.barra_estado.pack(side="bottom", fill="x", before=self.vistas["dashboard"].master)
 
     # ---------- navegación y comunicación entre vistas ----------
     def mostrar(self, clave):

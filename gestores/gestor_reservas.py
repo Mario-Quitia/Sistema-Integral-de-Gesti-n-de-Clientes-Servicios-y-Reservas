@@ -44,6 +44,8 @@ class GestorReservas:
             if self.contar_activas(servicio) >= servicio.cupo:
                 raise ServicioNoDisponibleError(servicio.nombre, "no tiene cupos libres")
             reserva = Reserva(cliente, servicio, duracion, impuesto, descuento)
+        except EntidadNoEncontradaError:
+            raise   # ya quedó registrado por el método obtener del gestor
         except SoftwareFJError as error:
             registrar_error("Reserva fallida", error)
             raise

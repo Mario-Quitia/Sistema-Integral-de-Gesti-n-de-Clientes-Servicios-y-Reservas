@@ -1,0 +1,49 @@
+2026-11-05 21:54:45 | INFO     | Interfaz gráfica iniciada
+2026-11-05 21:54:48 | INFO     | Cliente registrado: Cliente Laura Gómez (ID 1032456789)
+2026-11-05 21:54:51 | INFO     | Cliente registrado: Cliente Andrés Pérez (ID 80123456)
+2026-11-05 21:54:51 | INFO     | Cliente registrado: Cliente Camila Rodríguez (ID 1019876543)
+2026-11-05 21:54:51 | INFO     | Cliente registrado: Cliente Juan Martínez (ID 79456123)
+2026-11-05 21:54:51 | INFO     | Cliente registrado: Cliente Sofía Herrera (ID 1144223344)
+2026-11-05 21:54:51 | ERROR    | Registro de cliente rechazado -> DatoInvalidoError: [FJ-101] Valor inválido para 'correo' ('maria.ruiz@'): formato de correo no válido
+2026-11-05 21:54:55 | ERROR    | Registro de cliente rechazado -> EntidadDuplicadaError: [FJ-201] Ya existe un cliente con identificador '1032456789'.
+2026-11-05 21:54:57 | INFO     | Cliente actualizado: Cliente Andrés Pérez (ID 80123456)
+2026-11-05 21:55:02 | INFO     | Servicio registrado: Sala 'Sala Ejecutiva' [SAL-01] - Capacidad 12 personas - $50,000/hora - Disponible
+2026-11-05 21:55:04 | INFO     | Servicio registrado: Equipo 'Videobeam Epson' [EQU-01] - Proyector, 1 unidad(es), seguro 5% - $35,000/día - Disponible
+2026-11-05 21:55:06 | INFO     | Servicio registrado: Asesoría 'Asesoría en Ciberseguridad' [ASE-01] - Seguridad informática (nivel Experto) - $120,000/hora - Disponible
+2026-11-05 21:55:07 | INFO     | Servicio registrado: Sala 'Auditorio Principal' [SAL-02] - Capacidad 60 personas - $80,000/hora - Disponible
+2026-11-05 21:55:07 | INFO     | Servicio registrado: Equipo 'Portátil Lenovo' [EQU-02] - Computador portátil, 3 unidad(es), seguro 5% - $45,000/día - Disponible
+2026-11-05 21:55:07 | INFO     | Servicio registrado: Asesoría 'Asesoría Contable' [ASE-02] - Contabilidad (nivel Intermedio) - $90,000/hora - Disponible
+2026-11-05 21:55:07 | ERROR    | Registro de sala rechazado -> DatoInvalidoError: [FJ-101] Valor inválido para 'tarifa' ('-20000'): debe ser mayor que cero
+2026-11-05 21:55:12 | INFO     | Servicio ASE-02 deshabilitado
+2026-11-05 21:55:16 | INFO     | Reserva creada: Reserva R-0001: Laura Gómez - Sala Ejecutiva (3 horas) - $160,650.00 - Pendiente
+2026-11-05 21:55:18 | ERROR    | Reserva fallida -> DatoInvalidoError: [FJ-101] Valor inválido para 'duración' ('40'): para Equipo debe estar entre 1 y 30 días
+2026-11-05 21:55:20 | INFO     | Reserva creada: Reserva R-0002: Andrés Pérez - Videobeam Epson (2 días) - $87,465.00 - Pendiente
+2026-11-05 21:55:20 | INFO     | Reserva creada: Reserva R-0003: Camila Rodríguez - Asesoría en Ciberseguridad (2 horas) - $434,112.00 - Pendiente
+2026-11-05 21:55:20 | INFO     | Reserva creada: Reserva R-0004: Juan Martínez - Portátil Lenovo (3 días) - $168,682.50 - Pendiente
+2026-11-05 21:55:20 | INFO     | Reserva creada: Reserva R-0005: Sofía Herrera - Auditorio Principal (4 horas) - $356,048.00 - Pendiente
+2026-11-05 21:55:20 | INFO     | Reserva creada: Reserva R-0006: Laura Gómez - Portátil Lenovo (1 días) - $56,227.50 - Pendiente
+2026-11-05 21:55:20 | INFO     | Reserva R-0001 -> Confirmada
+2026-11-05 21:55:22 | INFO     | Reserva R-0002 -> Confirmada
+2026-11-05 21:55:25 | INFO     | Intento de procesamiento de R-0002 -> estado Procesada
+2026-11-05 21:55:25 | INFO     | Reserva R-0002 -> Procesada
+2026-11-05 21:55:28 | INFO     | Reserva R-0004 -> Cancelada
+2026-11-05 21:55:42 | INFO     | Interfaz gráfica iniciada
+2026-11-05 21:55:45 | INFO     | ===== INICIO DE LA SIMULACIÓN DE 15 OPERACIONES =====
+2026-11-05 21:55:45 | INFO     | Cliente registrado: Cliente Laura Gómez (ID 1032456789)
+2026-11-05 21:55:45 | INFO     | Cliente registrado: Cliente Andrés Pérez (ID 80123456)
+2026-11-05 21:55:45 | ERROR    | Registro de cliente rechazado -> DatoInvalidoError: [FJ-101] Valor inválido para 'correo' ('maria.ruiz@'): formato de correo no válido
+2026-11-05 21:55:45 | ERROR    | Registro de cliente rechazado -> EntidadDuplicadaError: [FJ-201] Ya existe un cliente con identificador '1032456789'.
+2026-11-05 21:55:45 | INFO     | Servicio registrado: Sala 'Sala Ejecutiva' [SAL-01] - Capacidad 12 personas - $50,000/hora - Disponible
+2026-11-05 21:55:45 | INFO     | Servicio registrado: Equipo 'Videobeam Epson' [EQU-01] - Proyector, 1 unidad(es), seguro 5% - $35,000/día - Disponible
+2026-11-05 21:55:45 | INFO     | Servicio registrado: Asesoría 'Asesoría en Ciberseguridad' [ASE-01] - Seguridad informática (nivel Experto) - $120,000/hora - Disponible
+2026-11-05 21:55:45 | ERROR    | Registro de sala rechazado -> DatoInvalidoError: [FJ-101] Valor inválido para 'tarifa' (-20000): debe ser mayor que cero
+2026-11-05 21:55:45 | INFO     | Reserva creada: Reserva R-0007: Laura Gómez - Sala Ejecutiva (3 horas) - $160,650.00 - Pendiente
+2026-11-05 21:55:45 | ERROR    | Reserva fallida -> DatoInvalidoError: [FJ-101] Valor inválido para 'duración' (40): para Equipo debe estar entre 1 y 30 días
+2026-11-05 21:55:45 | INFO     | Reserva creada: Reserva R-0008: Andrés Pérez - Videobeam Epson (2 días) - $87,465.00 - Pendiente
+2026-11-05 21:55:45 | ERROR    | Reserva fallida -> ServicioNoDisponibleError: [FJ-300] Servicio 'Videobeam Epson': no tiene cupos libres.
+2026-11-05 21:55:46 | INFO     | Reserva R-0007 -> Confirmada
+2026-11-05 21:55:46 | INFO     | Intento de procesamiento de R-0007 -> estado Procesada
+2026-11-05 21:55:46 | INFO     | Reserva R-0007 -> Procesada
+2026-11-05 21:55:46 | ERROR    | No se pudo cancelar R-0007 -> OperacionNoPermitidaError: [FJ-401] No se puede 'cancelar' una reserva en estado 'Procesada'.
+2026-11-05 21:55:46 | ERROR    | Consulta de cliente -> EntidadNoEncontradaError: [FJ-200] No existe un cliente con identificador '99999999'.
+2026-11-05 21:55:46 | INFO     | ===== FIN DE LA SIMULACIÓN: 8 exitosas, 7 controladas con error =====

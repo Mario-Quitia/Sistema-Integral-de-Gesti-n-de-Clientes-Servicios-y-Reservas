@@ -32,12 +32,12 @@ class VistaReservas(VistaBase):
         panel.grid(row=0, column=0, sticky="nsew", padx=(0, 16))
 
         self.form = Formulario(panel.cuerpo, [
-            ("cliente", "Cliente", "combo", {}),
-            ("servicio", "Servicio", "combo", {}),
+            ("cliente", "Cliente", "combo", {"span": 3}),
+            ("servicio", "Servicio (solo con cupo)", "combo", {"span": 3}),
             ("duracion", "Duración", "entrada", {"valor": "1"}),
-            ("impuesto", "Impuesto (%)", "entrada", {"valor": str(IMPUESTO_POR_DEFECTO)}),
-            ("descuento", "Descuento (%) – máx. 50", "entrada", {"valor": "0"}),
-        ])
+            ("impuesto", "Impuesto %", "entrada", {"valor": str(IMPUESTO_POR_DEFECTO)}),
+            ("descuento", "Desc. % (≤50)", "entrada", {"valor": "0"}),
+        ], columnas=3)
         self.form.pack(fill="x")
         self._lbl_duracion = self.form.controles["duracion"].master.winfo_children()[0]
         for clave in ("servicio", "duracion", "impuesto", "descuento"):
@@ -46,14 +46,14 @@ class VistaReservas(VistaBase):
         # Resumen del costo (se actualiza automáticamente)
         resumen = tk.Frame(panel.cuerpo, bg="#f8fafc", highlightthickness=1,
                            highlightbackground=PALETA["borde"])
-        resumen.pack(fill="x", pady=(12, 10))
+        resumen.pack(fill="x", pady=(10, 4))
         self._valores_costo = {}
         for i, (clave, texto) in enumerate((("subtotal", "Subtotal"), ("descuento", "Descuento"),
                                             ("impuesto", "Impuesto"), ("total", "TOTAL"))):
             negrita = clave == "total"
             tk.Label(resumen, text=texto, bg="#f8fafc", fg=PALETA["texto"] if negrita else PALETA["texto_suave"],
                      font=(FUENTE, 12 if negrita else 10, "bold" if negrita else "normal")
-                     ).grid(row=i, column=0, sticky="w", padx=12, pady=(8 if i == 0 else 2, 8 if negrita else 2))
+                     ).grid(row=i, column=0, sticky="w", padx=12, pady=(6 if i == 0 else 1, 6 if negrita else 1))
             etiqueta = tk.Label(resumen, text="—", bg="#f8fafc",
                                 fg=PALETA["primario"] if negrita else PALETA["texto"],
                                 font=(FUENTE, 12 if negrita else 10, "bold"))
@@ -90,14 +90,14 @@ class VistaReservas(VistaBase):
         ttk.Label(barra, text="Estado:", style="Superficie.TLabel").pack(side="right", padx=6)
 
         self.tabla = Tabla(panel.cuerpo, [
-            ("codigo", "Código", 70, "center"),
-            ("cliente", "Cliente", 150, "w"),
-            ("servicio", "Servicio", 170, "w"),
-            ("duracion", "Duración", 80, "center"),
-            ("subtotal_txt", "Subtotal", 100, "e"),
-            ("total_txt", "Total", 110, "e"),
-            ("estado", "Estado", 95, "center"),
-            ("fecha", "Fecha", 120, "center"),
+            ("codigo", "Código", 60, "center"),
+            ("cliente", "Cliente", 120, "w"),
+            ("servicio", "Servicio", 130, "w"),
+            ("duracion", "Duración", 75, "center"),
+            ("total_txt", "Total", 90, "e"),
+            ("estado", "Estado", 85, "center"),
+            ("subtotal_txt", "Subtotal", 90, "e"),
+            ("fecha", "Fecha", 115, "center"),
         ], al_seleccionar=self._actualizar_botones, al_doble_clic=self._ver_historial)
         self.tabla.pack(fill="both", expand=True)
 
@@ -170,6 +170,8 @@ class VistaReservas(VistaBase):
                            "cliente": cliente if conservar_cliente else ""})
         self._lbl_duracion.config(text="Duración")
         self._mostrar_costos(None)
+        for clave in ("duracion", "impuesto", "descuento"):
+            self.form.controles[clave].configure(style="TEntry")
 
     def _codigo_seleccionado(self):
         fila = self.tabla.seleccion()
