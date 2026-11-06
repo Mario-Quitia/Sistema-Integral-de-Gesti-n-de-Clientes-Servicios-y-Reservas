@@ -1,0 +1,106 @@
+[
+  {
+    "tema": "Python desde cero",
+    "titulo": "Curso COMPLETO de PYTHON desde CERO para PRINCIPIANTES",
+    "canal": "MoureDev by Brais Moure",
+    "url": "https://www.youtube.com/watch?v=Kp4Mvapo5kc",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Enlace proporcionado por el usuario; verificado sin cambios. Curso completo para principiantes."
+  },
+  {
+    "tema": "Programación orientada a objetos (POO) en Python",
+    "titulo": "Curso de POO con PYTHON desde CERO (Completo)",
+    "canal": "Soy Dalto",
+    "url": "https://www.youtube.com/watch?v=HtKqSJX7VoM",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "El enlace proporcionado por el usuario (https://www.youtube.com/watch?v=jX7H1W3f9k) es inválido: el ID tiene 10 caracteres y oEmbed respondió HTTP 400. Se reemplazó por el curso real de POO con Python de Soy Dalto."
+  },
+  {
+    "tema": "Tkinter desde cero",
+    "titulo": "¿Cómo desarrollar interfaces gráficas en Python con Tkinter? ¡Curso completo para principiantes!",
+    "canal": "Código Espinoza - Automatiza tu Vida",
+    "url": "https://www.youtube.com/watch?v=jwA1Efuq48Q",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Curso completo de Tkinter para principiantes en un solo video."
+  },
+  {
+    "tema": "Interfaces gráficas con Python",
+    "titulo": "Curso Python. Interfaces gráficas I. Vídeo 42",
+    "canal": "pildorasinformaticas",
+    "url": "https://www.youtube.com/watch?v=hTUJC8HsC2I",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Primer video (42) de la serie de interfaces gráficas con Tkinter dentro del curso de Python de Píldoras Informáticas; la serie continúa en los videos siguientes."
+  },
+  {
+    "tema": "Interfaces gráficas con Python",
+    "titulo": "Python Tkinter - Aplicación de Escritorio de Productos con Sqlite3, CRUD",
+    "canal": "Fazt",
+    "url": "https://www.youtube.com/watch?v=W2kAF9pKPPE",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Proyecto práctico: aplicación de escritorio CRUD con Tkinter y SQLite3."
+  },
+  {
+    "tema": "Manejo de excepciones en Python (try/except)",
+    "titulo": "Manejo de Excepciones en Python [try, except, else, finally, raise] 🕵🏻 # 027",
+    "canal": "Sergio A. Castaño Giraldo",
+    "url": "https://www.youtube.com/watch?v=QIAi0xfmQho",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Cubre try, except, else, finally y raise."
+  },
+  {
+    "tema": "Clases abstractas en Python (abc / ABC)",
+    "titulo": "Clases Abstractas y el Módulo ABC en Python (Guía Definitiva)",
+    "canal": "yacklyon",
+    "url": "https://www.youtube.com/watch?v=HcHNvQmYkvA",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Clases abstractas y el módulo abc."
+  },
+  {
+    "tema": "Clases abstractas en Python (abc / ABC)",
+    "titulo": "Interfaces ABC - 26 - Python Orientado a objetos",
+    "canal": "nicosiored",
+    "url": "https://www.youtube.com/watch?v=vuDy9wZAWKA",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Clases abstractas con ABC usadas como interfaces; parte de una serie de POO."
+  },
+  {
+    "tema": "Git y GitHub desde cero",
+    "titulo": "Curso COMPLETO de GIT y GITHUB desde CERO para PRINCIPIANTES",
+    "canal": "MoureDev by Brais Moure",
+    "url": "https://www.youtube.com/watch?v=3GymExBkKjE",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Curso completo para principiantes."
+  },
+  {
+    "tema": "Ramas (branches) en Git/GitHub",
+    "titulo": "GIT / GITHUB ♥ Ramas o Branch, Uniones o Merge ♥  [ Tutorial en Español - Parte 3]",
+    "canal": "Bluuweb",
+    "url": "https://www.youtube.com/watch?v=tFr0Vg1q9Eg",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Ramas y merge; parte 3 de una serie de Git/GitHub."
+  },
+  {
+    "tema": "Pull Requests en GitHub",
+    "titulo": "😻 CÓMO hacer tu primera PULL REQUEST a un proyecto en GITHUB 🐙",
+    "canal": "midulive",
+    "url": "https://www.youtube.com/watch?v=BPns9r76vSI",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Primera pull request a un proyecto en GitHub."
+  },
+  {
+    "tema": "Módulo logging de Python (opcional)",
+    "titulo": "Loggers - 7 - Python Avanzado tutorial en español",
+    "canal": "nicosiored",
+    "url": "https://www.youtube.com/watch?v=Qqjbe_bbz1k",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Teoría de loggers; serie de Python avanzado (continúa en el video 8)."
+  },
+  {
+    "tema": "Listas y diccionarios en Python (opcional)",
+    "titulo": "Estructuras de datos con Python en 8 minutos: Listas, Tuplas, Conjuntos y Diccionarios",
+    "canal": "BitBoss",
+    "url": "https://www.youtube.com/watch?v=v25-m1LOUiU",
+    "verificado": "oEmbed OK 2026-11-05",
+    "nota": "Repaso breve de listas, tuplas, conjuntos y diccionarios."
+  }
+]
